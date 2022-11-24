@@ -1,0 +1,22 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form action="register" method="post">
+            {% csrf_token %}
+            username<input type="text" name="username"></br>
+            firstname<input type="text" name="firstname"></br>
+            lastname<input type="text" name="lastname"></br>
+            email<input type="email" name="email"></br>
+            password<input type="password" name="password"></br>
+            cpassword<input type="password" name="cpassword"></br>
+            <input type="submit" name="submit"></br>
+
+        </form>
+        {% for msg in messages %}
+        {{msg}}
+        {% endfor %}
+        
+    </body>
+</html>
