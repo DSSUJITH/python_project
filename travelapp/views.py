@@ -12,10 +12,10 @@ def login(request):
         user=auth.authenticate(username=username,password=password)
         if user is not None:
             auth.login(request,user)
-            return redirect('/')
+            return redirect('demo')
         else:
             messages.info(request,"invalid username or password")
-            return redirect('login')
+            return redirect('/')
     return render(request,"login.html")
 
 def demo(request):
@@ -44,11 +44,11 @@ def register(request):
         else:
             messages.info(request,"password not matched")
             return redirect('register')
-        return redirect('login')
+        return redirect('/')
     return render(request,"register.html")
 
 def logout(request):
     auth.logout(request)
-    return redirect('login')
+    return redirect('/')
 
 

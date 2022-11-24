@@ -1,18 +1,69 @@
+
+{% load static %}
 <html>
     <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Travello template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/about.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/about_responsive.css' %}">
+
 
     </head>
     <body>
-        <form action="register" method="post">
+        <form  class="form" action="register" method="post">
             {% csrf_token %}
-            username<input type="text" name="username"></br>
-            firstname<input type="text" name="firstname"></br>
-            lastname<input type="text" name="lastname"></br>
-            email<input type="email" name="email"></br>
-            password<input type="password" name="password"></br>
-            cpassword<input type="password" name="cpassword"></br>
-            <input type="submit" name="submit"></br>
-
+            <table class="table table-striped table-bordered table-hover table-center">
+                <tr>
+                    <td colspan="2" align="center">
+                    
+                      <h3 class="text-dark">Register Here</h3>
+                      
+                    </td>
+                    </tr> 
+                <tr>
+                    <td>username</td>
+                    <td><input type="text" name="username" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>firstname</td>
+                    <td><input type="text" name="firstname" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>lastname</td>
+                    <td><input type="text" name="lastname" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td><input type="email" name="email" class="form-control" ></td>
+                </tr>
+                <tr>
+                    <td>password</td>
+                    <td><input type="password" name="password" class="form-control" ></td>
+                </tr>
+                <tr>
+                    <td>cpassword</td>
+                    <td><input type="password" name="cpassword" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><input type="submit" class="btn btn-primary" name="submit"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                    
+                      Already have aaccount&nbsp<a href="/"> login</a>
+                      
+                    </td>
+                    </tr>   
+            
+                      
+           </table>
         </form>
         {% for msg in messages %}
         {{msg}}
